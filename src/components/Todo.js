@@ -12,6 +12,16 @@ const ToDOContainer = styled.div`
   margin: 8px;
   user-select: none;
 
+  @media screen and (max-width: 800px) {
+    height: 50px;
+    font-size: 22px;
+  }
+
+  @media screen and (max-width: 500px) {
+    height: 40px;
+    font-size: 18px;
+  }
+
   li {
     margin-left: 12px;
     list-style: none;
@@ -25,6 +35,41 @@ const ToDOContainer = styled.div`
   }
 `;
 
+const FancyDiv = styled.div`
+  height: 60px;
+  width: 8px;
+  background: #699e64;
+  display: flex;
+
+  @media screen and (max-width: 800px) {
+    height: 50px;
+    width: 6px;
+  }
+
+  @media screen and (max-width: 500px) {
+    height: 40px;
+    width: 4px;
+  }
+`;
+
+const ListContainer = styled.div`
+  display: flex;
+  width: 582px;
+  height: 60px;
+  background: #fcf4f4;
+  align-items: center;
+
+  @media screen and (max-width: 800px) {
+    height: 50px;
+    width: 352px;
+  }
+
+  @media screen and (max-width: 500px) {
+    height: 40px;
+    width: 211px;
+  }
+`;
+
 const IconsContainer = styled.div`
   display: flex;
   width: 133.333px;
@@ -33,22 +78,18 @@ const IconsContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+
+  @media screen and (max-width: 800px) {
+    height: 50px;
+    width: 117px;
+  }
+
+  @media screen and (max-width: 500px) {
+    height: 40px;
+    width: 93px;
+  }
 `;
 
-const FancyDiv = styled.div`
-  height: 60px;
-  width: 8px;
-  background: #699e64;
-  display: flex;
-`;
-
-const ListContainer = styled.div`
-  display: flex;
-  width: 510px;
-  height: 60px;
-  background: #fcf4f4;
-  align-items: center;
-`;
 const StyledMdDoneContainer = styled.div`
   background: #699e64;
   width: 66.665px;
@@ -57,6 +98,18 @@ const StyledMdDoneContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 800px) {
+    height: 50px;
+    width: 58.5px;
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: 500px) {
+    height: 40px;
+    width: 46.5px;
+    font-size: 16px;
+  }
 
   &:hover {
     filter: brightness(110%);
@@ -72,6 +125,17 @@ const StyledAiOutlineDeleteContainer = styled.div`
   justify-content: center;
   align-items: center;
 
+  @media screen and (max-width: 800px) {
+    height: 50px;
+    width: 58.5px;
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: 500px) {
+    height: 40px;
+    width: 46.5px;
+    font-size: 16px;
+  }
   &:hover {
     filter: brightness(105%);
   }

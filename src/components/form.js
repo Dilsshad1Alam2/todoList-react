@@ -10,32 +10,75 @@ const FormContainer = styled.div`
 const ParentContainer = styled.div`
   display: flex;
   gap: 10px;
+  padding: 0px;
+
+  @media screen and (max-width: 800px) {
+    font-size: 10px;
+  }
+
+  @media screen and (max-width: 500px) {
+    gap: 5px;
+  }
 `;
 
 const InputAddContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 
   input {
     height: 60px;
-    width: 500px;
+    width: 490px;
     background-color: #fcf4f4;
     font-size: 30px;
     outline: none;
     border: none;
     color: #b46363;
-    padding: 0;
+    padding-left: 10px;
+
+    @media screen and (max-width: 800px) {
+      height: 50px;
+      width: 280px;
+      font-size: 22px;
+      padding-left: 6px;
+    }
+
+    @media screen and (max-width: 500px) {
+      height: 40px;
+      width: 154px;
+      font-size: 18px;
+      padding-left: 6px;
+    }
+  }
+`;
+
+const StyledFaPlusContainer = styled.div`
+  height: 60px;
+  background-color: #fcf4f4;
+  width: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 800px) {
+    height: 52px;
+    width: 60px;
+  }
+
+  @media screen and (max-width: 500px) {
+    height: 40px;
+    width: 40px;
   }
 `;
 
 const StyledFaPlus = styled(FaPlusSquare)`
   font-size: 30px;
-  position: absolute;
-  right: 20px;
   cursor: pointer;
-  padding: 0;
+
+  @media screen and (max-width: 500px) {
+    height: 25px;
+    width: 25px;
+  }
 
   &:hover {
     filter: brightness(110%);
@@ -44,12 +87,26 @@ const StyledFaPlus = styled(FaPlusSquare)`
 
 const ChooseAll = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
 
   select {
     font-size: 18px;
     outline: none;
     border: none;
     color: #b46363;
+    height: 60px;
+
+    @media screen and (max-width: 800px) {
+      height: 50px;
+      font-size: 16px;
+  }
+
+    @media screen and (max-width: 500px) {
+      height: 40px;
+      width: auto;
+      font-size: 12px;
+    }
   }
 
   option {
@@ -87,10 +144,9 @@ const Form = ({ setCurrentTask, todos, setTodos, currentTask, setCatgory }) => {
     }
   };
 
-  const categoryChangedHandler = (e)=>{
-    setCatgory(e.target.value)
-
-  }
+  const categoryChangedHandler = (e) => {
+    setCatgory(e.target.value);
+  };
 
   return (
     <FormContainer>
@@ -102,11 +158,13 @@ const Form = ({ setCurrentTask, todos, setTodos, currentTask, setCatgory }) => {
             onKeyDown={keyDownHandler}
             type="text"
           />
-          <StyledFaPlus onClick={onClickHandler} />
+          <StyledFaPlusContainer>
+            <StyledFaPlus onClick={onClickHandler} />
+          </StyledFaPlusContainer>
         </InputAddContainer>
 
         <ChooseAll>
-          <select onChange = {categoryChangedHandler} name="todos">
+          <select onChange={categoryChangedHandler} name="todos">
             <option value="all">All</option>
             <option value="completed">Completed</option>
             <option value="uncompleted">Uncompleted</option>

@@ -18,6 +18,16 @@ const HeaderContainer = styled.div`
 const Header = styled.p`
   color: #699e64;
   font-size: 50px;
+
+  @media screen and (max-width: 800px) {
+  font-size: 35px;
+  }
+
+  @media screen and (max-width: 500px) {
+  font-size: 25px;
+  }
+
+
 `;
 
 const App = () => {
