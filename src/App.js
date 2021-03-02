@@ -20,22 +20,25 @@ const Header = styled.p`
   font-size: 50px;
 
   @media screen and (max-width: 800px) {
-  font-size: 35px;
+    font-size: 35px;
   }
 
   @media screen and (max-width: 500px) {
-  font-size: 25px;
+    font-size: 25px;
   }
-
-
 `;
 
 const Footer = styled.div`
-position: absolute;
-bottom: 10px;
-text-align: center;
-width: 100%;
-`
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  width: 100%;
+
+
+  a{
+    color:#b46363;
+  }
+`;
 
 const App = () => {
   const [currentTask, setCurrentTask] = useState("");
@@ -60,31 +63,29 @@ const App = () => {
     }
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     getFromLocal();
-  },[])
+  }, []);
 
   useEffect(() => {
     filterHandler();
     saveToLocal();
   }, [todos, category]);
 
+  //Local storage
 
+  const saveToLocal = () => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  };
 
-//Local storage 
-
-const saveToLocal = () =>{
-localStorage.setItem('todos', JSON.stringify(todos));
-}
-
-const getFromLocal = () =>{
-if(localStorage.getItem('todos') === null){
-  localStorage.setItem('todos', JSON.stringify([]));
-}else{
-  let localValue = JSON.parse(localStorage.getItem('todos'))
-  setTodos(localValue);
-}  
-}
+  const getFromLocal = () => {
+    if (localStorage.getItem("todos") === null) {
+      localStorage.setItem("todos", JSON.stringify([]));
+    } else {
+      let localValue = JSON.parse(localStorage.getItem("todos"));
+      setTodos(localValue);
+    }
+  };
 
   return (
     <AppContainer>
@@ -100,8 +101,11 @@ if(localStorage.getItem('todos') === null){
         setCatgory={setCatgory}
       />
 
-      <TodoList todos={todos} setTodos={setTodos} filtered = {filtered}/>
-      <Footer>Developed by Dilshad Alam</Footer>
+      <TodoList todos={todos} setTodos={setTodos} filtered={filtered} />
+      <Footer>
+        Developed by
+        <a href="https://github.com/Dilsshad1Alam2"> Dilshad Alam</a>
+      </Footer>
     </AppContainer>
   );
 };
