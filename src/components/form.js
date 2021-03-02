@@ -53,7 +53,7 @@ const InputAddContainer = styled.div`
 `;
 
 const StyledFaPlusContainer = styled.div`
-  height: 60px;
+  height: 61.98px;
   background-color: #fcf4f4;
   width: 75px;
   display: flex;
@@ -66,7 +66,7 @@ const StyledFaPlusContainer = styled.div`
   }
 
   @media screen and (max-width: 500px) {
-    height: 40px;
+    height: 41.98px;
     width: 40px;
   }
 `;
@@ -157,6 +157,7 @@ const Form = ({ setCurrentTask, todos, setTodos, currentTask, setCatgory }) => {
             onChange={onChangeHandler}
             onKeyDown={keyDownHandler}
             type="text"
+            placeholder ="Enter Task Here"
           />
           <StyledFaPlusContainer>
             <StyledFaPlus onClick={onClickHandler} />
