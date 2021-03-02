@@ -104,7 +104,7 @@ const App = () => {
       <TodoList todos={todos} setTodos={setTodos} filtered={filtered} />
       <Footer>
         Developed by
-        <a href="https://github.com/Dilsshad1Alam2"> Dilshad Alam</a>
+        <a target = '_blank' href="https://github.com/Dilsshad1Alam2"> Dilshad Alam</a>
       </Footer>
     </AppContainer>
   );
