@@ -30,6 +30,13 @@ const Header = styled.p`
 
 `;
 
+const Footer = styled.div`
+position: absolute;
+bottom: 10px;
+text-align: center;
+width: 100%;
+`
+
 const App = () => {
   const [currentTask, setCurrentTask] = useState("");
 
@@ -94,6 +101,7 @@ if(localStorage.getItem('todos') === null){
       />
 
       <TodoList todos={todos} setTodos={setTodos} filtered = {filtered}/>
+      <Footer>Developed by Dilshad Alam</Footer>
     </AppContainer>
   );
 };
